@@ -165,15 +165,15 @@ public interface ITable {
    * @return False if the table key already exists with a different type
    */
   public boolean putNumber(String key, double value);
-  
-  /** 
+
+  /**
    * Gets the current value in the table, setting it if it does not exist.
    * @param key the key
    * @param defaultValue the default value to set if key doens't exist.
    * @return False if the table key exists with a different type
    */
   public boolean setDefaultNumber(String key, double defaultValue);
-  
+
   /**
    * Returns the number the key maps to.
    * @param key the key to look up
@@ -202,15 +202,15 @@ public interface ITable {
    * @return False if the table key already exists with a different type
    */
   public boolean putString(String key, String value);
-  
-  /** 
+
+  /**
    * Gets the current value in the table, setting it if it does not exist.
    * @param key the key
    * @param defaultValue the default value to set if key doens't exist.
    * @return False if the table key exists with a different type
    */
   public boolean setDefaultString(String key, String defaultValue);
-  
+
   /**
    * Returns the string the key maps to.
    * @param key the key to look up
@@ -239,15 +239,15 @@ public interface ITable {
    * @return False if the table key already exists with a different type
    */
   public boolean putBoolean(String key, boolean value);
-  
-  /** 
+
+  /**
    * Gets the current value in the table, setting it if it does not exist.
    * @param key the key
    * @param defaultValue the default value to set if key doens't exist.
    * @return False if the table key exists with a different type
    */
   public boolean setDefaultBoolean(String key, boolean defaultValue);
-  
+
   /**
    * Returns the boolean the key maps to.
    * @param key the key to look up
@@ -276,15 +276,15 @@ public interface ITable {
    * @return False if the table key already exists with a different type
    */
   public boolean putBooleanArray(String key, boolean[] value);
-  
-  /** 
+
+  /**
    * Gets the current value in the table, setting it if it does not exist.
    * @param key the key
    * @param defaultValue the default value to set if key doens't exist.
    * @return False if the table key exists with a different type
    */
   public boolean setDefaultBooleanArray(String key, boolean[] defaultValue);
-  
+
   /**
    * Put a boolean array in the table
    * @param key the key to be assigned to
@@ -292,15 +292,15 @@ public interface ITable {
    * @return False if the table key already exists with a different type
    */
   public boolean putBooleanArray(String key, Boolean[] value);
-  
-  /** 
+
+  /**
    * Gets the current value in the table, setting it if it does not exist.
    * @param key the key
    * @param defaultValue the default value to set if key doens't exist.
    * @return False if the table key exists with a different type
    */
   public boolean setDefaultBooleanArray(String key, Boolean[] defaultValue);
-  
+
   /**
    * Returns the boolean array the key maps to.
    * @param key the key to look up
@@ -338,15 +338,15 @@ public interface ITable {
    * @return False if the table key already exists with a different type
    */
   public boolean putNumberArray(String key, double[] value);
-  
-  /** 
+
+  /**
    * Gets the current value in the table, setting it if it does not exist.
    * @param key the key
    * @param defaultValue the default value to set if key doens't exist.
    * @return False if the table key exists with a different type
    */
   public boolean setDefaultNumberArray(String key, double[] defaultValue);
-  
+
   /**
    * Put a number array in the table
    * @param key the key to be assigned to
@@ -354,15 +354,15 @@ public interface ITable {
    * @return False if the table key already exists with a different type
    */
   public boolean putNumberArray(String key, Double[] value);
-  
-  /** 
+
+  /**
    * Gets the current value in the table, setting it if it does not exist.
    * @param key the key
    * @param defaultValue the default value to set if key doens't exist.
    * @return False if the table key exists with a different type
    */
   public boolean setDefaultNumberArray(String key, Double[] defaultValue);
-  
+
   /**
    * Returns the number array the key maps to.
    * @param key the key to look up
@@ -400,15 +400,15 @@ public interface ITable {
    * @return False if the table key already exists with a different type
    */
   public boolean putStringArray(String key, String[] value);
-  
-  /** 
+
+  /**
    * Gets the current value in the table, setting it if it does not exist.
    * @param key the key
    * @param defaultValue the default value to set if key doens't exist.
    * @return False if the table key exists with a different type
    */
   public boolean setDefaultStringArray(String key, String[] defaultValue);
-  
+
   /**
    * Returns the string array the key maps to.
    * @param key the key to look up
@@ -437,15 +437,15 @@ public interface ITable {
    * @return False if the table key already exists with a different type
    */
   public boolean putRaw(String key, byte[] value);
-  
-  /** 
+
+  /**
    * Gets the current value in the table, setting it if it does not exist.
    * @param key the key
    * @param defaultValue the default value to set if key doens't exist.
    * @return False if the table key exists with a different type
    */
   public boolean setDefaultRaw(String key, byte[] defaultValue);
-  
+
   /**
    * Put a raw value (bytes from a byte buffer) in the table
    * @param key the key to be assigned to
@@ -482,6 +482,14 @@ public interface ITable {
   public static final int NOTIFY_DELETE = 0x08;
   public static final int NOTIFY_UPDATE = 0x10;
   public static final int NOTIFY_FLAGS = 0x20;
+
+  public static final int NOTIFY_ALL = NOTIFY_IMMEDIATE
+    | NOTIFY_LOCAL
+    | NOTIFY_NEW
+    | NOTIFY_LOCAL
+    | NOTIFY_DELETE
+    | NOTIFY_UPDATE
+    | NOTIFY_FLAGS;
 
   /**
    * Add a listener for changes to the table
